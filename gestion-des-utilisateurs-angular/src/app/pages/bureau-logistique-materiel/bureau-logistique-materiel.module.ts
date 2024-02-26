@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { AsyncPipe, CommonModule, DatePipe } from '@angular/common';
 
 import { BureauLogistiqueMaterielRoutingModule } from './bureau-logistique-materiel-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,6 +39,8 @@ import { AuthActivateRouteGuard } from 'src/app/routeguards/auth.routeguard';
 import { XhrInterceptor } from 'src/app/interceptors/app.request.interceptor';
 import { NgToastModule } from 'ng-angular-popup';
 import { ComposantModule } from 'src/app/composants/composant.module';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -72,6 +74,11 @@ import { ComposantModule } from 'src/app/composants/composant.module';
     ReactiveFormsModule, // pour formGroup
     BrowserAnimationsModule,
     HttpClientModule, // pour le backend
+
+    MatAutocompleteModule,
+    AsyncPipe,
+    MatFormFieldModule,
+
 
     NgbModule, // dropdown
 

@@ -3,7 +3,7 @@ import { CommonModule, DatePipe, JsonPipe } from '@angular/common';
 import { Vehicule } from 'src/app/model/vehicule.model';
 import { VehiculeService } from 'src/app/services/vehicule.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Observable, Subject, Subscription, catchError, debounceTime, distinctUntilChanged, map, of, switchMap, tap, throwError } from 'rxjs';
+import { Observable, Subject, Subscription, catchError, debounceTime, distinctUntilChanged, of, tap, throwError } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,6 +20,12 @@ import { DotationVehicule } from 'src/app/model/dotation-vehicule.model';
 import { DotationVehiculeVehiculeService } from 'src/app/services/dotation-vehicule-vehicule.service';
 import { DotationVehiculeVehicule } from 'src/app/model/dotation-vehicule-vehicule.model';
 
+import {startWith, map, switchMap} from 'rxjs/operators';
+import {AsyncPipe} from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @Component({
   selector: 'app-consultation-vehicule-liste',
   // standalone: true,
@@ -28,6 +34,9 @@ import { DotationVehiculeVehicule } from 'src/app/model/dotation-vehicule-vehicu
   styleUrl: './consultation-vehicule-liste.component.css'
 })
 export class ConsultationVehiculeListeComponent implements OnInit, OnDestroy {
+
+  public control = new FormControl('');
+  public filteredUniteDouanieres: Observable<UniteDouaniere[]> | undefined;
 
   public vehicules: Vehicule[] = [];
   public vehicule: Vehicule | undefined;
@@ -38,17 +47,10 @@ export class ConsultationVehiculeListeComponent implements OnInit, OnDestroy {
   public dotationVehiculeVehicules: DotationVehiculeVehicule[] = [];
   public dotationVehiculeVehicule: DotationVehiculeVehicule | undefined;
 
-
-
-
-
   public lieuStockageVehicules: LieuStockageVehicule[] = [];
   public lieuStockageVehicule: LieuStockageVehicule | undefined;
 
-
-
   private subscriptions: Subscription[] = [];
-
 
   /* ----------------------------------------------------------------------------------------- */
   focusOnInput: boolean = false;
@@ -114,26 +116,16 @@ export class ConsultationVehiculeListeComponent implements OnInit, OnDestroy {
     "rowLibelleArticleBonEntree",
     "rowLieuStockageVehicule",
     "numeroSerie",
-    //"numeroImmatriculation",
     "rowEtat",
     "rowTypeEnergie",
     "rowNombreAgeVehicule"
-
-
   ];
   displayedColumnsCustom: string[] = [
     "N°",
     "Libelle article",
     "Lieu stockage vehicule",
-    // "N° serie",
-    // "N° immatriculation",
     "Etat vehicule",
     "Type energie",
-    //"Provenance",
-    // "N° carte grise",
-    // "Date mise en circulation",
-    //"Type vehicule",
-    //"Nom unite",
     "Age (années)"
 
 
@@ -145,10 +137,6 @@ export class ConsultationVehiculeListeComponent implements OnInit, OnDestroy {
     private lieuStockageVehiculeService: LieuStockageVehiculeService,
     private uniteDouaniereService: UniteDouaniereService,
     private dotationVehiculeVehiculeService: DotationVehiculeVehiculeService,
-
-
-
-
     private matDialog: MatDialog,
   ) { }
 
@@ -157,6 +145,12 @@ export class ConsultationVehiculeListeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
+    this.filteredUniteDouanieres = this.control.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+
     // this.listeVehicules();
     this.listeLieuStockageVehicules();
     this.listeUniteDouanieres();
@@ -248,6 +242,24 @@ export class ConsultationVehiculeListeComponent implements OnInit, OnDestroy {
     doc.save('vehicule-liste.pdf');
   }
 
+
+  // -------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------
+  private _filter(value: string): UniteDouaniere[] {
+    // const filterValue = this._normalizeValue(value);
+    if (value) {
+      this.dataSource.filter = value.trim().toLowerCase();
+    } else {
+      this.dataSource.filter = '';
+    }
+    return this.uniteDouanieres.filter(uniteDouaniere => this._normalizeValue(uniteDouaniere.nomUniteDouaniere).includes(value));
+  }
+
+  private _normalizeValue(value: string): string {
+    return value.toLowerCase().replace(/\s/g, '');
+  }
+  // -------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------
 
   search(term: string): void {
     this.termeRechercheNumeroSerieModele = term;

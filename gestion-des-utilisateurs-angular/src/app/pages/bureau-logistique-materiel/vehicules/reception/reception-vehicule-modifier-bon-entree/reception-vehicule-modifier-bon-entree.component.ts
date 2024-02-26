@@ -286,7 +286,7 @@ export class ReceptionVehiculeModifierBonEntreeComponent implements OnInit, OnDe
     BordereauLivraisonForm.value.matriculeAgent = this.agents[0];
 
     // PRESTATAIRES
-    BordereauLivraisonForm.value.ninea = this.prestataires.find(prestataire => prestataire.raisonSociale === BordereauLivraisonForm.value.ninea);;
+    BordereauLivraisonForm.value.ninea = this.prestataires.find(prestataire => prestataire.raisonSociale === BordereauLivraisonForm.value.ninea);
 
     // CONFORMITE BORDEREAU LIVRAISON
     // BordereauLivraisonForm.value.conformiteBL = 'oui';

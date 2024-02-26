@@ -10,7 +10,8 @@
 
     <main class="bg-mywhite">
 
-        <div class="container bg-myprimary bg-gradient py-2 my-2" style="box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); width: 98%;">
+        <div class="container bg-myprimary bg-gradient py-2 my-2"
+            style="box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); width: 98%;">
             <div class="row">
                 <div class="col-12 text-center fw-bolder fs-5">
                     Consultation des Véhicules
@@ -26,7 +27,6 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text h-100"
                                 style="box-shadow: #F5E0A7 0px 50px 100px -20px, #F5E0A7 0px 30px 60px -30px, #F5E0A7 0px -2px 6px 0px inset; outline: none;">
-                                <!-- <mat-icon>search</mat-icon> -->
                                 <img src="../../../../../assets/loupe.png" alt="">
                             </span>
                         </div>
@@ -39,7 +39,8 @@
 
                     <div *ngIf="focusOnInput" style="position: absolute; background-color: #e7e7e7;">
 
-                        <ng-container *ngFor="let vehicle of vehiculeFilterDoubleNumeroSerieModele$ | async;" style="cursor: pointer; display: block; color: gray; background-color: #fff; margin: 5px; text-decoration: none;">
+                        <ng-container *ngFor="let vehicle of vehiculeFilterDoubleNumeroSerieModele$ | async;"
+                            style="cursor: pointer; display: block; color: gray; background-color: #fff; margin: 5px; text-decoration: none;">
                             <!-- {{ vehicle | json }} -->
                             <ng-container *ngIf="isNumber(termeRechercheNumeroSerieModele); else nonNumeric">
                                 <ng-container *ngIf="vehicle?.numeroSerie as numeroSerie;">
@@ -98,49 +99,57 @@
 
 
 
-              <div class="col-3 text-center">
-                  <!-- <select  (change)="filtrerParSecteur($event)" name="codeSecteurActivite" id="codeSecteurActivite" required ngModel class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
-                      <option value=""></option>
-                      <option *ngFor="let secteurActivite of secteurActivites" [value]="secteurActivite.libelleSecteurActivite">
-                          {{ secteurActivite.libelleSecteurActivite }}
-                      </option>
-                  </select> -->
+                <div class="col-3 text-center">
+                    <input type="text" placeholder="Rechercher une unité" [formControl]="control"
+                        [matAutocomplete]="auto" id="myInputSearch" #myInputSearch #searchBox
+                        (input)="search(searchBox.value)"
+                        class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
 
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let uniteDouaniere of (filteredUniteDouanieres | async)?.slice(0, 5)"
+                            [value]="uniteDouaniere.nomUniteDouaniere">
+                            {{ uniteDouaniere.nomUniteDouaniere }}
+                        </mat-option>
+                    </mat-autocomplete>
 
-                  <select  (change)="filtrerParUniteDouaniere($event)" name="codeUniteDouaniere" id="codeUniteDouaniere" required ngModel class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
+                    <!-- <select  (change)="filtrerParUniteDouaniere($event)" name="codeUniteDouaniere" id="codeUniteDouaniere" required ngModel class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
                     <option value="">Nom unite </option>
                     <option *ngFor="let uniteDouaniere of uniteDouanieres" [value]="uniteDouaniere.nomUniteDouaniere">
                         {{ uniteDouaniere.nomUniteDouaniere }}
                     </option>
-                  </select>
-              </div>
+                  </select> -->
+                </div>
 
-              <div class="col-3 text-center">
-                  <select  (change)="filtrerParLieuStockageVehicule($event)" name="codeLieuVH" id="codeLieuVH" required ngModel class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
-                    <option value="">Lieu stockage vehicule</option>
-                    <option *ngFor="let lieuStockageVehicule of lieuStockageVehicules" [value]="lieuStockageVehicule.libellleLieuVH">
-                        {{ lieuStockageVehicule.libellleLieuVH }}
-                    </option>
-                  </select>
-              </div>
+                <div class="col-3 text-center">
+                    <select (change)="filtrerParLieuStockageVehicule($event)" name="codeLieuVH" id="codeLieuVH" required
+                        ngModel
+                        class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
+                        <option value="">Lieu stockage vehicule</option>
+                        <option *ngFor="let lieuStockageVehicule of lieuStockageVehicules"
+                            [value]="lieuStockageVehicule.libellleLieuVH">
+                            {{ lieuStockageVehicule.libellleLieuVH }}
+                        </option>
+                    </select>
+                </div>
 
-               <div class="col-3 text-center">
+                <div class="col-3 text-center">
 
-                <select  (change)="filtrerParAgeVehicule($event)"  required ngModel class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
-                  <option  value="">Age (années)</option>
-                  <option  value="1 ans">1 ans</option>
-                  <option  value="2 ans">2 ans</option>
-                  <option  value="3 ans">3 ans</option>
-                  <option  value="4 ans">4 ans</option>
-                  <option  value="5 ans">5 ans</option>
-                </select>
+                    <select (change)="filtrerParAgeVehicule($event)" required ngModel
+                        class="form-select text-input form-control bg-mywhite border  border-myprimary px-1 text-uppercase">
+                        <option value="">Age (années)</option>
+                        <option value="1 ans">1 ans</option>
+                        <option value="2 ans">2 ans</option>
+                        <option value="3 ans">3 ans</option>
+                        <option value="4 ans">4 ans</option>
+                        <option value="5 ans">5 ans</option>
+                    </select>
 
-               </div>
+                </div>
 
-               <div class="col-2  text-center">
-              </div>
+                <div class="col-2  text-center">
+                </div>
 
-      </div>
+            </div>
 
 
         </div>
@@ -150,9 +159,10 @@
 
                 <!-- <table mat-table [dataSource]="dataSource" matTableExporter #exporter="matTableExporter"> -->
                 <table mat-table [dataSource]="dataSource">
-                        <!-- Define columns and cells for IVehicule properties -->
+                    <!-- Define columns and cells for IVehicule properties -->
                     <ng-container *ngFor="let column of displayedColumns let i = index" [matColumnDef]="column">
-                        <th mat-header-cell *matHeaderCellDef class="fw-bold" [style.display]="columnsToHide.includes(column) ? 'none' : 'table-cell'">
+                        <th mat-header-cell *matHeaderCellDef class="fw-bold"
+                            [style.display]="columnsToHide.includes(column) ? 'none' : 'table-cell'">
                             {{ displayedColumnsCustom[i] }}
                         </th>
 
@@ -187,7 +197,8 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
 
-                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of vehicles">
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                    aria-label="Select page of vehicles">
                 </mat-paginator>
 
             </div>
