@@ -151,9 +151,78 @@ INSERT INTO "utilisateur_authority" ("utilisateur_id", "code") VALUES
 
 
 
+WIFIDGD
+D3800
+ndour2021
+
+1552 mame
+1534 kare
+1537 (bureau)
 
 
-n ° sommier : code corps agent
 
-cle non modifiable
 
+
+add-user.bat
+Pour démarrer WildFly en mode autonome, exécutez : 
+standalone.bat (pour Windows)
+standalone.sh (pour Linux/Unix)
+
+
+mvn spring-boot:run -Dspring.profiles.active=dev
+
+mvn clean install 
+
+
+https://jdbc.postgresql.org/download/
+
+
+spring.datasource.jndi-name=java:jboss/datasources/DLF_PATRIMOINE
+
+
+<module xmlns="urn:jboss:module:1.0" name="org.postgresql">
+    <resources>
+        <resource-root path="postgresql-42.3.7.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="javax.api"/>
+    </dependencies>
+</module>
+
+
+
+<datasource jndi-name="java:jboss/datasources/DLF_PATRIMOINE" pool-name="DLF_PATRIMOINE">
+    <connection-url>jdbc:postgresql://localhost:5433/DLF_PATRIMOINE</connection-url>
+    <driver>postgres</driver>
+    <security>
+        <user-name>postgres</user-name>
+        <password>postgres</password>
+    </security>
+</datasource>
+
+
+<driver name="postgres" module="org.postgresql">
+    <driver-class>org.postgresql.Driver</driver-class>
+</driver>
+
+
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <classifier>boot</classifier>
+            </configuration>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
