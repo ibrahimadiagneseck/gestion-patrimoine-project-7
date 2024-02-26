@@ -153,7 +153,11 @@ INSERT INTO "utilisateur_authority" ("utilisateur_id", "code") VALUES
 
 
 
-n ° sommier : code corps agent
 
-cle non modifiable
+add-user.bat
+Pour démarrer WildFly en mode autonome, exécutez : 
+standalone.bat (pour Windows)
+standalone.sh (pour Linux/Unix)
 
+
+mvn spring-boot:run -Dspring.profiles.active=dev

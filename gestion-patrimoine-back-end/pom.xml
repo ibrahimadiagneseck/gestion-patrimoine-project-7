@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>sn.douanes</groupId>
-	<artifactId>gestion-des-utilisateurs-spring-boot</artifactId>
+	<artifactId>gestion-patrimoine-back-end</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gestion-des-utilisateurs-spring-boot</name>
+	<name>gestion-patrimoine-back-end</name>
 	<description>project for Spring Boot and Spring Security</description>
 	<properties>
 		<java.version>21</java.version>
