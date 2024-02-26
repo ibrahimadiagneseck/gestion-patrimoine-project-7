@@ -161,3 +161,8 @@ standalone.sh (pour Linux/Unix)
 
 
 mvn spring-boot:run -Dspring.profiles.active=dev
+
+mvn clean install 
+
+
+
