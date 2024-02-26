@@ -2,11 +2,11 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.Sections;
-import sn.douanes.model.UniteDouaniere;
-import sn.douanes.model.UniteDouaniereSections;
-import sn.douanes.model.keys.UniteDouaniereSectionsId;
-import sn.douanes.repository.UniteDouaniereSectionsRepository;
+import sn.douanes.entities.Sections;
+import sn.douanes.entities.UniteDouaniere;
+import sn.douanes.entities.UniteDouaniereSections;
+import sn.douanes.entities.keys.UniteDouaniereSectionsId;
+import sn.douanes.repositories.UniteDouaniereSectionsRepository;
 import sn.douanes.services.UniteDouaniereSectionsService;
 
 import java.util.List;

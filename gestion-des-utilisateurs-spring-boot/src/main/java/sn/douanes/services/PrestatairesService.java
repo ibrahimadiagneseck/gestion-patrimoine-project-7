@@ -2,8 +2,8 @@ package sn.douanes.services;
 
 import sn.douanes.exception.PrestatairesExistException;
 import sn.douanes.exception.PrestatairesNotFoundException;
-import sn.douanes.model.Prestataires;
-import sn.douanes.model.SecteurActivite;
+import sn.douanes.entities.Prestataires;
+import sn.douanes.entities.SecteurActivite;
 
 import java.util.List;
 import java.util.Set;

@@ -1,10 +1,8 @@
 package sn.douanes.config;
 
-import sn.douanes.model.Agent;
-import sn.douanes.model.Authority;
-import sn.douanes.model.Utilisateur;
-import sn.douanes.repository.AgentRepository;
-import sn.douanes.repository.UtilisateurRepository;
+import sn.douanes.entities.Authority;
+import sn.douanes.entities.Utilisateur;
+import sn.douanes.repositories.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

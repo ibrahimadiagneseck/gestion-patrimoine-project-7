@@ -20,6 +20,14 @@ import { AppRoutingModule } from '../app-routing.module';
 import { PrestataireDetailComponent } from './prestataire/prestataire-detail/prestataire-detail.component';
 import { SecteurActiviteDetailComponent } from './secteur-activite/secteur-activite-detail/secteur-activite-detail.component';
 import { PopupSecteurActiviteComponent } from './secteur-activite/popup-secteur-activite/popup-secteur-activite.component';
+import { VehiculeDetailComponent } from './vehicule/vehicule-detail/vehicule-detail.component';
+import { VehiculeAjouterComponent } from './vehicule/vehicule-ajouter/vehicule-ajouter.component';
+import { BordereauLivraisonDetailComponent } from './bordereau-livraison/bordereau-livraison-detail/bordereau-livraison-detail.component';
+import { ArticleBonEntreeDetailComponent } from './article-bon-entree/article-bon-entree-detail/article-bon-entree-detail.component';
+import { BordereauLivraisonAjouterComponent } from './bordereau-livraison/bordereau-livraison-ajouter/bordereau-livraison-ajouter.component';
+import { ArticleBonEntreeAjouterComponent } from './article-bon-entree/article-bon-entree-ajouter/article-bon-entree-ajouter.component';
+import { BonEntreeDetailComponent } from './bon-entree/bon-entree-detail/bon-entree-detail.component';
+import { BonEntreeAjouterComponent } from './bon-entree/bon-entree-ajouter/bon-entree-ajouter.component';
 
 
 @NgModule({
@@ -29,6 +37,18 @@ import { PopupSecteurActiviteComponent } from './secteur-activite/popup-secteur-
     EnteteComponent,
     MenuComponent,
     PopupConfirmationSupprimerComponent,
+
+    BonEntreeAjouterComponent,
+    BonEntreeDetailComponent,
+
+    ArticleBonEntreeAjouterComponent,
+    ArticleBonEntreeDetailComponent,
+
+    BordereauLivraisonAjouterComponent,
+    BordereauLivraisonDetailComponent,
+
+    VehiculeAjouterComponent,
+    VehiculeDetailComponent,
 
     PrestataireDetailComponent,
 
@@ -59,6 +79,18 @@ import { PopupSecteurActiviteComponent } from './secteur-activite/popup-secteur-
     EnteteComponent,
     MenuComponent,
     PopupConfirmationSupprimerComponent,
+
+    BonEntreeAjouterComponent,
+    BonEntreeDetailComponent,
+
+    ArticleBonEntreeAjouterComponent,
+    ArticleBonEntreeDetailComponent,
+
+    BordereauLivraisonAjouterComponent,
+    BordereauLivraisonDetailComponent,
+
+    VehiculeAjouterComponent,
+    VehiculeDetailComponent,
 
     PrestataireDetailComponent,
 

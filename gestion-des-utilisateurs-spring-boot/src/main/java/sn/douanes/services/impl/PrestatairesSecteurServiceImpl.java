@@ -2,11 +2,11 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.Prestataires;
-import sn.douanes.model.PrestatairesSecteur;
-import sn.douanes.model.SecteurActivite;
-import sn.douanes.model.keys.PrestatairesSecteurId;
-import sn.douanes.repository.PrestatairesSecteurRepository;
+import sn.douanes.entities.Prestataires;
+import sn.douanes.entities.PrestatairesSecteur;
+import sn.douanes.entities.SecteurActivite;
+import sn.douanes.entities.keys.PrestatairesSecteurId;
+import sn.douanes.repositories.PrestatairesSecteurRepository;
 import sn.douanes.services.PrestatairesSecteurService;
 
 import java.util.List;

@@ -2,8 +2,8 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.Sections;
-import sn.douanes.repository.SectionsRepository;
+import sn.douanes.entities.Sections;
+import sn.douanes.repositories.SectionsRepository;
 import sn.douanes.services.SectionsService;
 
 import java.util.List;

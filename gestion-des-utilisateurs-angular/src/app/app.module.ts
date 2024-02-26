@@ -45,6 +45,12 @@ import { SecteurActiviteDetailsComponent } from './pages/secteur-activite/secteu
 import { ProfilListeComponent } from './pages/profil/profil-liste/profil-liste.component';
 import { ProfilAjouterComponent } from './pages/profil/profil-ajouter/profil-ajouter.component';
 import { ProfilDetailComponent } from './pages/profil/profil-detail/profil-detail.component';
+import { BureauLogistiqueMaterielModule } from './pages/bureau-logistique-materiel/bureau-logistique-materiel.module';
+import { AjouterBonPourListeComponent } from './pages/bon-pour/ajouter/ajouter-bon-pour-liste/ajouter-bon-pour-liste.component';
+import { AjouterBonPourAjouterComponent } from './pages/bon-pour/ajouter/ajouter-bon-pour-ajouter/ajouter-bon-pour-ajouter.component';
+import { AjouterBonPourListeDetailComponent } from './pages/bon-pour/ajouter/ajouter-bon-pour-liste-detail/ajouter-bon-pour-liste-detail.component';
+import { AjouterBonPourAjouterArticleComponent } from './pages/bon-pour/ajouter/ajouter-bon-pour-ajouter-article/ajouter-bon-pour-ajouter-article.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -95,7 +101,12 @@ export const MY_DATE_FORMATS = {
 
     ProfilListeComponent,
     ProfilAjouterComponent,
-    ProfilDetailComponent
+    ProfilDetailComponent,
+
+    AjouterBonPourListeComponent,
+    AjouterBonPourAjouterComponent,
+    AjouterBonPourListeDetailComponent,
+    AjouterBonPourAjouterArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,9 +127,11 @@ export const MY_DATE_FORMATS = {
     MatDialogModule,
 
     NgToastModule,
+    NgbModule,
 
     ComposantModule, // composant
 
+    BureauLogistiqueMaterielModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

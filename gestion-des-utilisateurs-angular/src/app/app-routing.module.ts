@@ -11,6 +11,9 @@ import { PrestataireSecteurListeComponent } from './pages/prestataire/prestatair
 import { SectionsListeComponent } from './pages/sections/sections-liste/sections-liste.component';
 import { SecteurActiviteListeComponent } from './pages/secteur-activite/secteur-activite-liste/secteur-activite-liste.component';
 import { ProfilListeComponent } from './pages/profil/profil-liste/profil-liste.component';
+import { AjouterBonPourListeComponent } from './pages/bon-pour/ajouter/ajouter-bon-pour-liste/ajouter-bon-pour-liste.component';
+import { AjouterBonPourListeDetailComponent } from './pages/bon-pour/ajouter/ajouter-bon-pour-liste-detail/ajouter-bon-pour-liste-detail.component';
+import { ConsultationBonPourListeComponent } from './pages/bon-pour/consultation/consultation-bon-pour-liste/consultation-bon-pour-liste.component';
 
 
 const routes: Routes = [
@@ -35,6 +38,11 @@ const routes: Routes = [
   { path: 'profil', component: ProfilListeComponent, canActivate: [AuthActivateRouteGuard]},
 
 
+  { path: 'ajouter-bon-pour', component: AjouterBonPourListeComponent, canActivate: [AuthActivateRouteGuard]},
+  { path: 'ajouter-bon-pour-detail/:identifiantBP', component: AjouterBonPourListeDetailComponent, canActivate: [AuthActivateRouteGuard]},
+
+  { path: 'consultation-bon-pour', component: ConsultationBonPourListeComponent, canActivate: [AuthActivateRouteGuard]},
+  
 ];
 
 @NgModule({

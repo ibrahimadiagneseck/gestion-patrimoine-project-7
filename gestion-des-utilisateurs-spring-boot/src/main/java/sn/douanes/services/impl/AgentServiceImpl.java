@@ -2,10 +2,10 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.Agent;
-import sn.douanes.model.Sections;
-import sn.douanes.model.UniteDouaniere;
-import sn.douanes.repository.AgentRepository;
+import sn.douanes.entities.Agent;
+import sn.douanes.entities.Sections;
+import sn.douanes.entities.UniteDouaniere;
+import sn.douanes.repositories.AgentRepository;
 import sn.douanes.services.AgentService;
 
 import java.util.List;

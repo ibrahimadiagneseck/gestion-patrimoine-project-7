@@ -1,22 +1,19 @@
 package sn.douanes.services.impl;
 
-
-import jakarta.transaction.Transactional;
-import jdk.jshell.execution.Util;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sn.douanes.exception.entities.*;
-import sn.douanes.model.Agent;
-import sn.douanes.model.Utilisateur;
-import sn.douanes.repository.AgentRepository;
-import sn.douanes.repository.UtilisateurRepository;
+import sn.douanes.entities.Agent;
+import sn.douanes.entities.Utilisateur;
+import sn.douanes.repositories.AgentRepository;
+import sn.douanes.repositories.UtilisateurRepository;
 import sn.douanes.services.EmailService;
 import sn.douanes.services.LoginAttemptService;
 import sn.douanes.services.UtilisateurService;
@@ -28,7 +25,6 @@ import java.util.List;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static sn.douanes.constants.UserImplConstant.*;
-import static sn.douanes.constants.UserImplConstant.EMAIL_ALREADY_EXISTS;
 
 @Service
 @Transactional
@@ -81,7 +77,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 
         String userName = utilisateur.getMatriculeAgent().getMatriculeAgent();
 
-        // String clearPwd = generatePassword();
         String clearPwd = utilisateur.getMatriculeAgent().getMatriculeAgent();
         String hashPwd = passwordEncoder.encode(clearPwd);
         user.setPwd(hashPwd);

@@ -1,7 +1,6 @@
 package sn.douanes.exception;
 
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import jakarta.persistence.NoResultException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -17,8 +16,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import sn.douanes.exception.entities.*;
-import sn.douanes.model.HttpResponse;
+import sn.douanes.entities.HttpResponse;
 
+//import javax.persistence.NoResultException;
+import jakarta.persistence.NoResultException;
 import java.io.IOException;
 import java.util.Objects;
 

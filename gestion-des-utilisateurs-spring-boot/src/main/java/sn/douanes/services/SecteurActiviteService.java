@@ -1,6 +1,6 @@
 package sn.douanes.services;
 
-import sn.douanes.model.SecteurActivite;
+import sn.douanes.entities.SecteurActivite;
 
 import java.util.List;
 

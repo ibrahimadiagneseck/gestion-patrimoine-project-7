@@ -1,9 +1,9 @@
 package sn.douanes.services;
 
 
-import sn.douanes.model.Agent;
-import sn.douanes.model.Sections;
-import sn.douanes.model.UniteDouaniere;
+import sn.douanes.entities.Agent;
+import sn.douanes.entities.Sections;
+import sn.douanes.entities.UniteDouaniere;
 
 import java.util.List;
 

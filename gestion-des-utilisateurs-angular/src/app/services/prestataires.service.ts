@@ -74,9 +74,6 @@ export class PrestatairesService {
     return this.httpClient.post<Prestataires>(`${this.urlServeur}/AjouterPrestataires`, prestataires, { withCredentials: true });
   }
 
-  // public ajouterPrestatairesRequestParam(formData: FormData): Observable<Prestataires> {
-  //   return this.httpClient.post<Prestataires>(`${this.urlServeur}/AjouterRequestParamPrestataires`, formData);
-  // }
 
   public modifierPrestataires(prestataires: Prestataires): Observable<Prestataires> {
     return this.httpClient.put<Prestataires>(`${this.urlServeur}/ModifierPrestataires`, prestataires, { withCredentials: true });
@@ -87,16 +84,4 @@ export class PrestatairesService {
     return this.httpClient.delete<CustomHttpRespone>(`${this.urlServeur}/SupprimerPrestatairesById/${ninea}`, { withCredentials: true });
   }
 
-
-  // public createPrestatairesFormData(prestataires: Prestataires): FormData {
-
-  //   const formData = new FormData();
-
-  //   formData.append('ninea', prestataires.ninea);
-  //   formData.append('raisonSociale', prestataires.raisonSociale);
-  //   formData.append('numeroTelephone', prestataires.numeroTelephone.toString());
-  //   formData.append('adresseEmail', prestataires.adresseEmail);
-  //   formData.append('adresse', prestataires.adresse);
-  //   return formData;
-  // }
 }

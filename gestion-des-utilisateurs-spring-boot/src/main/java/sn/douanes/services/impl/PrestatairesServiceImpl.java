@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sn.douanes.exception.PrestatairesExistException;
 import sn.douanes.exception.PrestatairesNotFoundException;
-import sn.douanes.model.BordereauLivraison;
-import sn.douanes.model.Prestataires;
-import sn.douanes.model.SecteurActivite;
-import sn.douanes.repository.BordereauLivraisonRepository;
-import sn.douanes.repository.PrestatairesRepository;
+import sn.douanes.entities.BordereauLivraison;
+import sn.douanes.entities.Prestataires;
+import sn.douanes.entities.SecteurActivite;
+import sn.douanes.repositories.BordereauLivraisonRepository;
+import sn.douanes.repositories.PrestatairesRepository;
 import sn.douanes.services.PrestatairesService;
 
 import java.util.HashSet;

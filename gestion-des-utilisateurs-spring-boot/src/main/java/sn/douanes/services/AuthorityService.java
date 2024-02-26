@@ -1,7 +1,7 @@
 package sn.douanes.services;
 
 
-import sn.douanes.model.Authority;
+import sn.douanes.entities.Authority;
 
 import java.util.List;
 

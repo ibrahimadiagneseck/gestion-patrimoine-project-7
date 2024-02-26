@@ -2,8 +2,8 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.SecteurActivite;
-import sn.douanes.repository.SecteurActiviteRepository;
+import sn.douanes.entities.SecteurActivite;
+import sn.douanes.repositories.SecteurActiviteRepository;
 import sn.douanes.services.SecteurActiviteService;
 
 import java.util.List;

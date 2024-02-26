@@ -22,29 +22,20 @@ export class TypeUniteDouaniereService {
 
 
   public listeTypeUniteDouanieres(): Observable<TypeUniteDouaniere[]> {
-    return this.httpClient.get<TypeUniteDouaniere[]>(`${this.urlServeur}/TypeUniteDouanieres`);
+    return this.httpClient.get<TypeUniteDouaniere[]>(`${this.urlServeur}/TypeUniteDouanieres`, { withCredentials: true });
   }
 
-  public ajouterTypeUniteDouaniere(formData: FormData): Observable<TypeUniteDouaniere> {
-    return this.httpClient.post<TypeUniteDouaniere>(`${this.urlServeur}/AjouterTypeUniteDouaniere`, formData);
+  public ajouterTypeUniteDouaniere(typeUniteDouaniere: TypeUniteDouaniere): Observable<TypeUniteDouaniere> {
+    return this.httpClient.post<TypeUniteDouaniere>(`${this.urlServeur}/AjouterTypeUniteDouaniere`, typeUniteDouaniere, { withCredentials: true });
   }
 
-  public modifierTypeUniteDouaniere(formData: FormData): Observable<TypeUniteDouaniere> {
-    return this.httpClient.put<TypeUniteDouaniere>(`${this.urlServeur}/ModifierTypeUniteDouaniere`, formData);
+  public modifierTypeUniteDouaniere(typeUniteDouaniere: TypeUniteDouaniere): Observable<TypeUniteDouaniere> {
+    return this.httpClient.put<TypeUniteDouaniere>(`${this.urlServeur}/ModifierTypeUniteDouaniere`, typeUniteDouaniere, { withCredentials: true });
   }
 
   public supprimerTypeUniteDouaniere(codeTypeUniteDouaniere: string): Observable<CustomHttpRespone> {
-    return this.httpClient.delete<CustomHttpRespone>(`${this.urlServeur}/SupprimerTypeUniteDouaniereByTypeUniteDouaniereId/${codeTypeUniteDouaniere}`);
+    return this.httpClient.delete<CustomHttpRespone>(`${this.urlServeur}/SupprimerTypeUniteDouaniereByTypeUniteDouaniereId/${codeTypeUniteDouaniere}`, { withCredentials: true });
   }
 
 
-  public createBonEntreeFormData(typeUniteDouaniere: TypeUniteDouaniere): FormData {
-
-    const formData = new FormData();
-
-    formData.append('codeTypeUniteDouaniere', typeUniteDouaniere.codeTypeUniteDouaniere);
-    formData.append('libelleTypeUniteDouaniere', typeUniteDouaniere.libelleTypeUniteDouaniere);
-
-    return formData;
-  }
 }

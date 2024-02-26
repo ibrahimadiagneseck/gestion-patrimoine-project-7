@@ -1,17 +1,14 @@
 package sn.douanes.services;
 
-import org.springframework.web.multipart.MultipartFile;
 import sn.douanes.exception.entities.*;
-import sn.douanes.model.Agent;
-import sn.douanes.model.Utilisateur;
+import sn.douanes.entities.Agent;
+import sn.douanes.entities.Utilisateur;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.util.List;
 
 public interface UtilisateurService {
-
-    // Utilisateur register(Utilisateur utilisateur) throws UserNotFoundException, EmailExistException, MessagingException;
 
     List<Utilisateur> getUsers();
 
@@ -28,7 +25,5 @@ public interface UtilisateurService {
     void deleteUserByMatriculeAgent(Agent agent) throws IOException;
 
     void resetPasswordByMatriculeAgent(Agent agent) throws MessagingException, AgentNotFoundException;
-
-    // User updateProfileImage(String username, MultipartFile profileImage) throws UserNotFoundException, UsernameExistException, EmailExistException, IOException, NotAnImageFileException;
 
 }

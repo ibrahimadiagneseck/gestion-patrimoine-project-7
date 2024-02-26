@@ -2,9 +2,9 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.TypeUniteDouaniere;
-import sn.douanes.model.UniteDouaniere;
-import sn.douanes.repository.UniteDouaniereRepository;
+import sn.douanes.entities.TypeUniteDouaniere;
+import sn.douanes.entities.UniteDouaniere;
+import sn.douanes.repositories.UniteDouaniereRepository;
 import sn.douanes.services.UniteDouaniereService;
 
 import java.util.List;

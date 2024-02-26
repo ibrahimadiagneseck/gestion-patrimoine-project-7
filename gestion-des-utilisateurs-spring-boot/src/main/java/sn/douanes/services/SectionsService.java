@@ -1,6 +1,6 @@
 package sn.douanes.services;
 
-import sn.douanes.model.Sections;
+import sn.douanes.entities.Sections;
 
 import java.util.List;
 

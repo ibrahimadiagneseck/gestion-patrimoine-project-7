@@ -1,6 +1,6 @@
 package sn.douanes.services;
 
-import sn.douanes.model.TypeUniteDouaniere;
+import sn.douanes.entities.TypeUniteDouaniere;
 
 import java.util.List;
 

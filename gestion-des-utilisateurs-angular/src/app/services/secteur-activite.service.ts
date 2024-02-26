@@ -74,10 +74,6 @@ export class SecteurActiviteService {
     return this.httpClient.post<SecteurActivite>(`${this.urlServeur}/AjouterSecteurActivite`, secteurActivite);
   }
 
-  // public ajouterSecteurActiviteRequestParam(formData: FormData): Observable<SecteurActivite> {
-  //   return this.httpClient.post<SecteurActivite>(`${this.urlServeur}/AjouterRequestParamSecteurActivite`, formData);
-  // }
-
   public modifierSecteurActivite(secteurActivite: SecteurActivite): Observable<SecteurActivite> {
     return this.httpClient.put<SecteurActivite>(`${this.urlServeur}/ModifierSecteurActivite`, secteurActivite);
   }
@@ -85,18 +81,6 @@ export class SecteurActiviteService {
   public supprimerSecteurActivite(identifiantBL: string): Observable<CustomHttpRespone> {
     return this.httpClient.delete<CustomHttpRespone>(`${this.urlServeur}/SupprimerSecteurActiviteById/${identifiantBL}`);
   }
-
-
-  // public createSecteurActiviteFormData(secteurActivite: SecteurActivite): FormData {
-
-  //   const formData = new FormData();
-
-  //   formData.append('codeSecteurActivite', secteurActivite.codeSecteurActivite);
-  //   formData.append('libelleSecteurActivite', secteurActivite.libelleSecteurActivite);
-
-  //   return formData;
-  // }
-
 
 
 }

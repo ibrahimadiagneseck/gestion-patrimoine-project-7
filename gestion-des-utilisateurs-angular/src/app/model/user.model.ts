@@ -1,7 +1,7 @@
 import { Section } from "jspdf-autotable";
 import { UniteDouaniere } from "./unite-douaniere.model";
 import { Sections } from "./sections.model";
-import { MyDate } from "./date.model";
+import { MyDate } from "./my-date.model";
 import { Authority } from "./authority.model";
 import { Agent } from "./agent.model";
 

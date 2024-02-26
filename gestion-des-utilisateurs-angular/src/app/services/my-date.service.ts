@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import * as CryptoJS from 'crypto-js';
 import { DatePipe } from '@angular/common';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { MyDate } from '../model/date.model';
+import { MyDate } from '../model/my-date.model';
 
 @Injectable({
   providedIn: 'root'

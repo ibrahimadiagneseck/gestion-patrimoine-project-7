@@ -1,8 +1,8 @@
 package sn.douanes.services;
 
-import sn.douanes.model.Sections;
-import sn.douanes.model.UniteDouaniere;
-import sn.douanes.model.UniteDouaniereSections;
+import sn.douanes.entities.Sections;
+import sn.douanes.entities.UniteDouaniere;
+import sn.douanes.entities.UniteDouaniereSections;
 
 import java.util.List;
 

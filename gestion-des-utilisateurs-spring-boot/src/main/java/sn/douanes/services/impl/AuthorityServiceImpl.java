@@ -2,8 +2,8 @@ package sn.douanes.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.douanes.model.Authority;
-import sn.douanes.repository.AuthorityRepository;
+import sn.douanes.entities.Authority;
+import sn.douanes.repositories.AuthorityRepository;
 import sn.douanes.services.AuthorityService;
 
 import java.util.List;

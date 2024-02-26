@@ -34,8 +34,8 @@ public class ProjectSecurityConfig {
             @Override
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration config = new CorsConfiguration();
-                // config.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
-                config.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:4201"));
+                config.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
+                // config.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:4201"));
                 config.setAllowedMethods(Collections.singletonList("*"));
                 config.setAllowCredentials(true);
                 config.setAllowedHeaders(Collections.singletonList("*"));
@@ -63,64 +63,7 @@ public class ProjectSecurityConfig {
                         // .requestMatchers("/connexion").authenticated()
                         // .requestMatchers("/**").permitAll()
 
-                        .requestMatchers("/Authorities").authenticated()
-                        .requestMatchers("/Users").authenticated()
-                        .requestMatchers("/connexion").authenticated()
-                        .requestMatchers("/inscription").authenticated()
-                        .requestMatchers("/AjouterUser").authenticated()
-                        .requestMatchers("/RecupererUserByUserName/*").authenticated()
-
-                        .requestMatchers("/Agents").authenticated()
-                        .requestMatchers("/AjouterAgent").authenticated()
-                        .requestMatchers("/ModifierAgent").authenticated()
-                        .requestMatchers("/SupprimerAgentById/*").authenticated()
-                        .requestMatchers("/RecupererAgentById/*").authenticated()
-
-                        .requestMatchers("/Sections").authenticated()
-                        .requestMatchers("/AjouterSections").authenticated()
-                        .requestMatchers("/ModifierSections").authenticated()
-                        .requestMatchers("/SupprimerSectionsById/*").authenticated()
-
-                        .requestMatchers("/UniteDouanieres").authenticated()
-                        .requestMatchers("/AjouterUniteDouaniere").authenticated()
-                        .requestMatchers("/ModifierUniteDouaniere").authenticated()
-                        .requestMatchers("/SupprimerUniteDouaniereById/*").authenticated()
-                        .requestMatchers("/RecupererUniteDouaniereById/*").authenticated()
-
-                        .requestMatchers("/UniteDouaniereSections").authenticated()
-                        .requestMatchers("/AjouterUniteDouaniereSectionss").authenticated()
-                        .requestMatchers("/ModifierUniteDouaniereSections").authenticated()
-                        .requestMatchers("/SupprimerUniteDouaniereSectionsById/*").authenticated()
-
-                        .requestMatchers("/SecteurActivites").authenticated()
-                        .requestMatchers("/AjouterSecteurActivite").authenticated()
-                        .requestMatchers("/ModifierSecteurActivite").authenticated()
-                        .requestMatchers("/SupprimerSecteurActiviteById/*").authenticated()
-
-                        .requestMatchers("/PrestatairesSecteurs").authenticated()
-                        .requestMatchers("/AjouterPrestatairesSecteurs").authenticated()
-                        .requestMatchers("/ModifierPrestatairesSecteur").authenticated()
-                        .requestMatchers("/SupprimerPrestatairesSecteurById/*").authenticated()
-
-                        .requestMatchers("/Prestataires").authenticated()
-                        .requestMatchers("/AjouterPrestataires").authenticated()
-                        .requestMatchers("/ModifierPrestataires").authenticated()
-                        .requestMatchers("/SupprimerPrestatairesById/*").authenticated()
-
-                        .requestMatchers("/TypeUniteDouanieres").authenticated()
-                        .requestMatchers("/AjouterTypeUniteDouaniere").authenticated()
-                        .requestMatchers("/ModifierTypeUniteDouaniere").authenticated()
-                        .requestMatchers("/SupprimerTypeUniteDouaniereById/*").authenticated()
-
-                        .requestMatchers("/TypeUniteDouanieres").authenticated()
-                        .requestMatchers("/AjouterTypeUniteDouaniere").authenticated()
-                        .requestMatchers("/ModifierTypeUniteDouaniere").authenticated()
-                        .requestMatchers("/SupprimerTypeUniteDouaniereById/*").authenticated()
-
-                        .requestMatchers("/Sections").authenticated()
-                        .requestMatchers("/AjouterSections").authenticated()
-                        .requestMatchers("/ModifierSections").authenticated()
-                        .requestMatchers("/SupprimerSectionsById/*").authenticated()
+                        .requestMatchers("/**").authenticated()
 
                 )
                 .formLogin(Customizer.withDefaults())
